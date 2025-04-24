@@ -1,0 +1,350 @@
+/* Basic Reset & Defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #212529; /* Darker default text */
+    background-color: #F7F8FC; /* Very light grey/blue background */
+}
+
+a {
+    text-decoration: none;
+    color: #0d6efd; /* Primary blue (like Bootstrap) */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0a58ca; /* Darker blue on hover */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block; /* Allows vertical align */
+    vertical-align: middle; /* Align images better with text */
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit; /* Inherit font from body */
+}
+
+input, select, button {
+     font-family: inherit; /* Ensure form elements use the font */
+}
+
+.container {
+    width: 1200px; /* Standard desktop width */
+    max-width: 100%; /* Prevent overflow on smaller viewports (though focus is desktop) */
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Header Styles */
+/* --- NEW HEADER STYLES --- */
+
+/* Reset any potential lingering header styles */
+.site-header {
+    background-color: #fff;
+    box-shadow: none; /* Remove previous shadow if any */
+    border-bottom: 1px solid #e9e9e9; /* Thin bottom border for the whole header */
+}
+
+.new-header { /* Specificity for new header */
+    padding: 0; /* Remove any old padding */
+}
+
+/* Header Main Row (Top Row) */
+.header-main {
+    padding: 15px 0; /* Vertical padding */
+    border-bottom: 1px solid #e9e9e9; /* Separator line */
+}
+
+.header-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Spacing between elements */
+}
+
+.header-main .logo img {
+    height: 40px; /* Adjust to match your new logo PNG height */
+    width: auto;
+    display: block; /* Prevents extra space below image */
+}
+
+/* New Search Bar Styles */
+.header-main .search-bar {
+    flex-grow: 1;
+    max-width: 550px; /* Adjust as needed */
+}
+
+.header-main .search-form {
+    display: flex;
+    border: 1px solid #0d6efd; /* Blue border */
+    border-radius: 6px;
+    overflow: hidden; /* Contain elements */
+    height: 42px; /* Match height of elements */
+}
+
+.header-main .search-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    color: #495057;
+    min-width: 150px; /* Prevent shrinking too much */
+    border-radius: 6px 0 0 6px; /* Round left corners */
+}
+.header-main .search-input::placeholder {
+    color: #adb5bd;
+}
+
+.header-main .search-category {
+    padding: 0 15px; /* Adjust padding */
+    border: none;
+    border-left: 1px solid #dee2e6; /* Separator */
+    border-right: 1px solid #dee2e6; /* Separator */
+    background-color: #fff; /* White background */
+    color: #495057;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* Basic style reset for select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); /* Basic dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 30px; /* Space for arrow */
+}
+
+.header-main .search-button {
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 0 6px 6px 0; /* Round right corners */
+}
+.header-main .search-button:hover {
+    background-color: #0a58ca;
+}
+
+/* User Profile Actions */
+.user-profile-actions {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between icons */
+}
+
+.profile-action {
+    display: flex;
+    flex-direction: column; /* Stack icon and label vertically */
+    align-items: center; /* Center items horizontally */
+    text-decoration: none;
+    color: #6c757d; /* Grey color for text */
+    font-size: 11px; /* Small font size for labels */
+}
+.profile-action:hover {
+    color: #0d6efd; /* Blue on hover */
+    text-decoration: none;
+}
+
+.action-icon {
+    width: 22px; /* Adjust icon size as needed */
+    height: 22px; /* Adjust icon size as needed */
+    margin-bottom: 4px; /* Space between icon and label */
+    opacity: 0.8; /* Slightly transparent icons */
+}
+.profile-action:hover .action-icon {
+    opacity: 1;
+}
+
+/* Header Navigation & Utility Row (Bottom Row) */
+.header-nav-utility {
+    background-color: #fff; /* Ensure white background */
+    padding: 10px 0; /* Vertical padding */
+}
+
+.header-nav-utility-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Nav Links (Left side of bottom row) */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between nav items */
+}
+
+.nav-link {
+    color: #343a40; /* Darker grey for nav links */
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex; /* Align icons/text */
+    align-items: center;
+}
+.nav-link:hover {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.category-trigger .hamburger-icon {
+    font-size: 18px; /* Size of hamburger character */
+    margin-right: 8px;
+    font-weight: normal;
+}
+.category-trigger {
+    font-weight: 600; /* Make "All category" slightly bolder */
+}
+
+.help-link .dropdown-icon,
+.ship-to .dropdown-icon {
+    font-size: 10px; /* Small dropdown arrow */
+    margin-left: 4px;
+    font-weight: normal;
+}
+
+/* Utility Links (Right side of bottom row) */
+.utility-links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between items */
+    font-size: 13px;
+    color: #495057;
+}
+
+.ship-to {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.utility-links .flag-icon {
+    width: 20px; /* Adjust flag size */
+    height: auto;
+    margin-left: 8px;
+    margin-right: 4px;
+}
+
+
+/* Footer Styles */
+.site-footer {
+    background-color: #fff;
+    padding-top: 50px; /* More space at the top of the footer */
+    border-top: 1px solid #dee2e6;
+    color: #6c757d; /* Default footer text color */
+    font-size: 13px; /* Slightly smaller footer text */
+}
+
+.footer-links-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px; /* Space before bottom bar */
+    gap: 20px; /* Gap between columns */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 160px; /* Adjust min-width */
+}
+
+.footer-column h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #343a40; /* Darker heading */
+    margin-bottom: 18px; /* More space below heading */
+}
+
+.footer-column ul li {
+    margin-bottom: 12px; /* Space between links */
+}
+
+.footer-column ul li a {
+    color: #6c757d; /* Grey links */
+    font-weight: 400;
+}
+
+.footer-column ul li a:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+.app-links a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 15px; /* More space below app buttons */
+}
+.app-links img {
+    height: 40px; /* Adjust size of App Store/Google Play PNGs */
+}
+
+.social-links {
+    margin-top: 10px;
+}
+.social-links a {
+    display: inline-block;
+    margin-right: 12px; /* Adjust spacing */
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+.social-links a:last-child {
+    margin-right: 0;
+}
+.social-links a:hover {
+    opacity: 1;
+}
+.social-links img {
+    width: 22px; /* Adjust size of social PNGs */
+    height: 22px; /* Adjust size of social PNGs */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: #f8f9fa; /* Light grey */
+    padding: 20px 0; /* Increased padding */
+    border-top: 1px solid #dee2e6;
+    margin-top: 30px; /* Space above the bottom bar */
+}
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.footer-bottom-left {
+    display: flex;
+    align-items: center;
+}
+.footer-logo {
+     height: 25px; /* Smaller logo */
+     width: auto;
+     margin-right: 20px; /* More space after logo */
+}
+.copyright {
+    line-height: 1.4; /* Adjust line height if needed */
+}
